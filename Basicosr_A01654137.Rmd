@@ -1,0 +1,104 @@
+---
+title: "Basicosr_A01XXXXXX"
+author: "Daniel Núñez"
+date: "3/23/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+ejercicio1 <- function(numero)
+{
+  suma <- 0
+  maximo <- numero - 1
+  for (i in 1:maximo)
+  {
+  if ((numero %% i) == 0)
+  {
+    suma <- suma + i
+  }
+  }
+  #print(suma)
+  if (suma > numero)
+  {
+    TRUE
+  }
+  else
+  {
+    FALSE
+  }
+}
+
+print(ejercicio1(10))
+```
+
+```{r}
+ejercicio2 <- function(num)
+{
+  if (num == 2) 
+  {
+    TRUE 
+  } 
+  else if (any(num %% 2:(num - 1) == 0))
+  {
+    FALSE
+  } 
+  else 
+  {
+    TRUE 
+  }
+}
+
+print(ejercicio2(7))
+```
+
+```{r}
+ejercicio3 <- function(n)
+{
+  suma <- 0
+  for (i in 0:n)
+  {
+    suma <- suma + (2 ^ i)
+  }
+  suma
+}
+
+print(ejercicio3(3))
+```
+
+```{r}
+ejercicio4 <- function(a, b)
+{
+  suma <- 0
+  while ((b > 0) & (a > 0)) 
+  {
+    suma <- b
+    b <- a %% b
+    a <- suma
+  }
+  a
+}
+
+print(ejercicio4(20,16))
+```
+
+```{r}
+ejercicio4.1 <- function(a, b)
+{
+  if (b == 0)
+  {
+    a
+  }
+  else
+  {
+    ejercicio4.1(b, a %% b)
+  }
+}
+
+print(ejercicio4.1(20,16))
+```
+
+
